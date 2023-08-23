@@ -50,8 +50,8 @@ public class BaseTest {
   private void sauceLabsDriverSetup(TestInfo testInfo) throws MalformedURLException {
     System.out.println("Sauce Android Native - BeforeMethod hook");
 
-    String username = "oauth-amir.gudic-92595";
-    String accessKey = "777b56b0-bd77-4c45-8cb5-f8ca278e4d02";
+    String username = "oauth-example";
+    String accessKey = "22222222-bbbb-4444-5555-121212121212";
 
     String sauceUrl = "@ondemand.eu-central-1.saucelabs.com:443";
 
@@ -63,7 +63,6 @@ public class BaseTest {
     MutableCapabilities capabilities = new MutableCapabilities();
     capabilities.setCapability("platformName", "Android");
     capabilities.setCapability("app", "storage:filename=ApiDemos-debug.apk");
-    capabilities.setCapability("deviceName", "Google Pixel GoogleAPI Emulator");
     capabilities.setCapability("platformVersion", "8.1");
     capabilities.setCapability("automationName", "UiAutomator2");
     capabilities.setCapability("name", testInfo.getDisplayName());
@@ -83,8 +82,8 @@ public class BaseTest {
   }
 
   private void browserstackDriverSetup() throws MalformedURLException {
-    String userName = "amirgudic_NhlvX8";
-    String accessKey = "m7xMf8xhqy4exJuAVo3t";
+    String userName = "amirgudic_username_example";
+    String accessKey = "access_key_example";
 
     DesiredCapabilities capabilities = new DesiredCapabilities();
     capabilities.setCapability("platformName", "Android");

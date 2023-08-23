@@ -1,7 +1,5 @@
 package web.test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,22 +12,22 @@ public class BaseWebTest {
   public WebDriver driver;
 
   @BeforeAll
-  public static void setDriver() {
-    WebDriverManager.chromedriver().setup();
+  public static void initialize() {
+    // Usually you do something needed once only per suite run here
   }
 
   @BeforeEach
   public void setup() {
     String headless = System.getProperty("headless");
 
-    ChromeDriverManager.chromedriver();
+    ChromeOptions chromeOptions = new ChromeOptions();
+    chromeOptions.addArguments("--remote-allow-origins=*");
+
     if ("true".equals(headless)) {
-      ChromeOptions chromeOptions = new ChromeOptions();
       chromeOptions.addArguments("--headless");
-      driver = new ChromeDriver(chromeOptions);
-    } else {
-      driver = new ChromeDriver();
     }
+
+    driver = new ChromeDriver(chromeOptions);
   }
 
   @AfterEach

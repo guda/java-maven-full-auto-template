@@ -16,11 +16,5 @@ public class GoogleTest extends BaseWebTest {
     new GoogleHomePage(getDriver())
         .open()
         .searchFor("Bosnia i Hercegovina");
-
-    try {
-      Thread.sleep(5000);
-    } catch (InterruptedException e) {
-      throw new RuntimeException(e);
-    }
   }
 }

@@ -8,6 +8,9 @@
 - JUnit 5.9.1
 - Allure reports 2.19.0
 
+## Appium server run
+run Appium server (from console, I used appium 2.1.2 in this project) `appium --base-path /wd/hub`
+
 ## Running the tests
 In order to run tests you need to:
 
